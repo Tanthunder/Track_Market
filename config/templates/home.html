@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-5">
+  Portfolio Summery
+</h1>
+<table class="table table-bordered-dark mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Total number of shares</th>
+        <th scope="col">Total amount invested</th>
+        <th scope="col">Average buying price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for k,v in context.items  %}
+      <tr>
+        <td>{{k}}</td>
+        <td>{{v.TotalQuant}}</td>
+        <td>{{v.TotalInvestment}}</td>
+        <td>{{v.AvgPrice}}</td>
+        
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+    
+  </table>
+{% endblock content %}

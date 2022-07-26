@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-5">June Month Breakdown</h1>
+<table class="table table-primary mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Year</th>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Total Buy Value</th>
+        <th scope="col">Total Sell Value</th>
+        <th scope="col">Net Value</th>
+        <th scope="col">Buy Quantity</th>
+        <th scope="col">Sell Quantity</th>
+        <th scope="col">Net Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for k,v in context.items  %}
+      <tr>
+        <td>2022</td>
+        <td>{{k}}</td>
+        <td>{{v.Buyprice}}</td>
+        <td>{{v.Sellprice}}</td>
+        <td>{{v.Net}}</td>
+        <td>{{v.BuyQuant}}</td>
+        <td>{{v.SellQuant}}</td>
+        <td>{{v.NetQ}}</td>
+        
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
